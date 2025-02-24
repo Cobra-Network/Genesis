@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play | Genesis</title>
+    <link href="./css/global.css" rel="stylesheet">
+    <script src="/js/global.js" type="module"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        iframe {
+            height: calc(100vh - 110px);
+            aspect-ratio: 16 / 9;
+            position: absolute;
+            top: 90px;
+            left: 50%;
+            border-radius: 15px;
+            transform: translateX(-50%);
+            max-width: calc(100% - 20px);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="fade-down" id="nav-placeholder"></div>
+    <iframe id="project-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        if (projectId) {
+            const iframeSrc = `/projects/${projectId}/index.html`;
+            document.getElementById('project-iframe').src = iframeSrc;
+        } else {
+            console.error('No project ID found in the URL.');
+        }
+    </script>
+</body>
+</html>

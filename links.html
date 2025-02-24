@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis</title>
+    <link href="./css/global.css" rel="stylesheet">
+    <script src="/js/global.js" type="module"></script>
+    <style>
+        .container {
+            width: 450px;
+            background-color: rgba(50, 50, 50, 0.2);
+            margin-top: 30px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid var(--normal-border-color);
+            border-radius: 25px;
+            padding: 5px 15px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.3s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        button {
+            height: 50px;
+            border: 2px solid var(--normal-border-color);
+            border-radius: 15px;
+            background-color: #0165FC;
+            margin-bottom: 10px;
+            color: white;
+            font-size: 18px;
+            padding: 0px 20px;
+            cursor: pointer;
+        }
+        p {
+            color: white;
+        }
+        li {
+            text-align: left;
+        }
+        a {
+            color: green;
+        }
+        .end {
+            height: 30px;
+            width: 1px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-down" id="nav-placeholder"></div>
+    <div class="container">
+        <h1>Link Generator</h1>
+        <p>We keep our links secure with a link generator to limit ease of mass link blocking. We don't mind you sharing your link, but keep in mind that it may get blocked quicker that way.</p>
+        <p style="color: red">WARNING: Link can only be generated once per 24 hours.</p>
+        <button id="generateButton">Get Link</button>
+        <div class="last-link"></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const generateButton = document.getElementById("generateButton");
+            const lastLinkElement = document.querySelector(".last-link");
+    
+            function checkCooldown() {
+                const lastGeneratedTime = localStorage.getItem("lastGeneratedTime");
+                if (lastGeneratedTime) {
+                    const timeNow = new Date().getTime();
+                    const timeElapsed = timeNow - parseInt(lastGeneratedTime);
+                    const cooldownTime = 24 * 60 * 60 * 1000;
+                    
+                    if (timeElapsed < cooldownTime) {
+                        const timeLeft = cooldownTime - timeElapsed;
+                        disableButton(timeLeft);
+                        return true;
+                    }
+                }
+                return false;
+            }
+    
+            function disableButton(timeLeft) {
+                generateButton.disabled = true;
+                generateButton.style.backgroundColor = "#888";
+                generateButton.style.cursor = "not-allowed";
+                updateButtonText(timeLeft);
+    
+                const interval = setInterval(() => {
+                    const newTimeLeft = parseInt(localStorage.getItem("lastGeneratedTime")) + (24 * 60 * 60 * 1000) - new Date().getTime();
+                    if (newTimeLeft <= 0) {
+                        clearInterval(interval);
+                        enableButton();
+                    } else {
+                        updateButtonText(newTimeLeft);
+                    }
+                }, 1000);
+            }
+    
+            function enableButton() {
+                generateButton.disabled = false;
+                generateButton.style.backgroundColor = "#0165FC";
+                generateButton.style.cursor = "pointer";
+                generateButton.textContent = "Get Link";
+                localStorage.removeItem("lastGeneratedTime");
+            }
+    
+            function updateButtonText(ms) {
+                const hours = Math.floor(ms / (1000 * 60 * 60));
+                const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+                generateButton.textContent = `Wait ${hours}h ${minutes}m ${seconds}s`;
+            }
+    
+            if (!checkCooldown()) {
+                generateButton.addEventListener("click", async function () {
+                    const url = "https://api.jsonbin.io/v3/b/67bb5018e41b4d34e499a694/latest";
+                    const accessKey = "$2a$10$DhuU1Dddiy7aCtREIt55jeEIhVEGYGaRwHX/98ADlRi94XK47Ci0e";
+    
+                    try {
+                        const response = await fetch(url, {
+                            method: "GET",
+                            headers: {
+                                "X-Access-Key": accessKey,
+                                "X-Bin-Meta": "false"
+                            }
+                        });
+    
+                        if (!response.ok) {
+                            throw new Error(`Error: ${response.status} ${response.statusText}`);
+                        }
+    
+                        const data = await response.json();
+                        const links = data.links;
+    
+                        if (links.length === 0) {
+                            lastLinkElement.textContent = "No links available at the moment.";
+                            return;
+                        }
+    
+                        const randomLink = links[Math.floor(Math.random() * links.length)].url;
+                        const timestamp = new Date().toLocaleString();
+    
+                        lastLinkElement.innerHTML = `<a href="${randomLink}" target="_blank">${randomLink}</a>`;
+    
+                        const history = JSON.parse(localStorage.getItem("linkHistory")) || [];
+                        history.unshift({ timestamp, url: randomLink, status: "Active" });
+                        localStorage.setItem("linkHistory", JSON.stringify(history));
+    
+                        localStorage.setItem("lastGeneratedTime", new Date().getTime());
+                        disableButton(24 * 60 * 60 * 1000);
+    
+                        let historyContainer = document.getElementById("historyContainer");
+                        if (!historyContainer) {
+                            historyContainer = document.createElement("div");
+                            historyContainer.id = "historyContainer";
+                            historyContainer.className = "container";
+                            historyContainer.style.marginTop = "30px";
+                            historyContainer.innerHTML = `<h1>Link History</h1><ul id="historyList"></ul>`;
+                            document.body.appendChild(historyContainer);
+                        }
+    
+                        const historyList = document.getElementById("historyList");
+                        const newEntry = document.createElement("li");
+                        newEntry.innerHTML = `${timestamp} - <a href="${randomLink}" target="_blank" style="color: green">${randomLink}</a> (Active)`;
+                        historyList.prepend(newEntry);
+    
+                        alert("Your link has been generated");
+    
+                        let endDiv = document.querySelector(".end");
+                        if (!endDiv) {
+                            endDiv = document.createElement("div");
+                            endDiv.className = "end";
+                            document.body.appendChild(endDiv);
+                        }
+    
+                    } catch (error) {
+                        console.error("Error fetching the link:", error);
+                        alert("Failed to generate a link. Please try again later.");
+                    }
+                });
+            }
+    
+            window.addEventListener("load", function () {
+                const history = JSON.parse(localStorage.getItem("linkHistory")) || [];
+                if (history.length === 0) return;
+    
+                const historyContainer = document.createElement("div");
+                historyContainer.id = "historyContainer";
+                historyContainer.className = "container";
+                historyContainer.style.marginTop = "30px";
+                historyContainer.innerHTML = `<h1>Link History</h1><ul id="historyList"></ul>`;
+                document.body.appendChild(historyContainer);
+    
+                const historyList = document.getElementById("historyList");
+                history.forEach(entry => {
+                    const color = entry.status === "Active" ? "green" : "red";
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = `${entry.timestamp} - <a href="${entry.url}" target="_blank" style="color: ${color}">${entry.url}</a> (${entry.status})`;
+                    historyList.appendChild(listItem);
+                });
+    
+                let endDiv = document.querySelector(".end");
+                if (!endDiv) {
+                    endDiv = document.createElement("div");
+                    endDiv.className = "end";
+                    document.body.appendChild(endDiv);
+                }
+            });
+        });
+    </script>    
+</body>
+</html>

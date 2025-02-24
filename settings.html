@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis</title>
+    <link href="./css/global.css" rel="stylesheet">
+    <link href="/css/themes.css" rel="stylesheet"> <!-- Ensure your themes.css file is included -->
+    <script src="/js/global.js" type="module"></script>
+    <style>
+        .container {
+            width: 450px;
+            background-color: rgba(50, 50, 50, 0.2);
+            margin-top: 30px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid var(--normal-border-color);
+            border-radius: 25px;
+            padding: 20px 15px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.3s ease-in forwards;
+        }
+        .container h2 {
+            margin-top: 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        select {
+            padding: 10px 10px;
+            background-color: #0165FC;
+            border: 2px solid var(--normal-border-color);
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-down" id="nav-placeholder"></div>
+    <h1>Settings</h1>
+    <div class="container">
+        <h2>Theme</h2>
+        <select id="theme-selector">
+            <option value="default">Cobra Classic (Default)</option>
+            <option value="midnight-eclipse">Midnight Eclipse</option>
+        </select>
+    </div> 
+
+    <script>
+        const themeSelector = document.getElementById('theme-selector');
+
+        // Load the theme from localStorage if available
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+            themeSelector.value = savedTheme === 'midnight-eclipse' ? 'midnight-eclipse' : 'default';
+        } else {
+            // Default theme
+            document.body.classList.add('cobra-classic');
+            themeSelector.value = 'default';
+        }
+
+        // Change theme when selection is made
+        themeSelector.addEventListener('change', function() {
+            const selectedTheme = themeSelector.value;
+            document.body.classList.remove('cobra-classic', 'midnight-eclipse'); // Remove previous themes
+            if (selectedTheme === 'midnight-eclipse') {
+                document.body.classList.add('midnight-eclipse'); // Apply midnight-eclipse theme
+            } else {
+                document.body.classList.add('cobra-classic'); // Apply default Cobra Classic theme
+            }
+            // Save the selected theme in localStorage
+            localStorage.setItem('theme', selectedTheme === 'midnight-eclipse' ? 'midnight-eclipse' : 'cobra-classic');
+        });
+    </script>
+</body>
+</html>

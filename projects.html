@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play | Genesis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="/css/global.css" rel="stylesheet">
+    <script src="/js/global.js" type="module"></script>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: rgba(50, 50, 50, 0.2); 
+            border: 2px solid var(--normal-border-color);;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .grid-item:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .grid-item img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .grid-item p {
+            margin-top: 10px;
+            font-family: 'Noto Sans', sans-serif;
+            color: white;
+            font-size: 16px;
+        }
+
+        .content {
+            width: calc(100% - 180px);
+            height: calc(100% - 70px);
+            margin-top: 20px;
+            background-color: transparent;
+        }
+        .ad-spot-160-600 {
+            width: 160px;
+            height: 600px;
+            background-color: transparent;
+            position: fixed;
+            top: calc(50% + 35px);
+            transform: translateY(-50%);
+            z-index: 9999;
+            right: 20px;
+        }
+        .ad-spot-160-300 {
+            width: 160px;
+            height: 300px;
+            background-color: transparent;
+            position: fixed;
+            top: calc(50% + 35px);
+            transform: translateY(-50%);
+            z-index: 9999;
+            right: 20px;
+        }
+        @media (max-width: 340px) {
+            .content {
+                width: 100vw;
+            }
+        }
+        @media (max-height: 710px) {
+            .ad-spot-160-600 {
+                display: none;
+            }
+        }
+        @media (min-height: 710px) {
+            .ad-spot-160-300 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-down" id="nav-placeholder"></div>
+    <div class="content">
+        <div class="grid-container"></div>
+    </div>
+    <div class="ad-spot-160-600">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'a5abe94631b60d4ff24dd514d3915f8e',
+                'format' : 'iframe',
+                'height' : 600,
+                'width' : 160,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/a5abe94631b60d4ff24dd514d3915f8e/invoke.js"></script>
+    </div>
+    <div class="ad-spot-160-300">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd529b09deca988452fd9313e589d65c0',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/d529b09deca988452fd9313e589d65c0/invoke.js"></script>
+    </div>
+    <script>
+        fetch('/config/games.json')
+        .then(response => response.json())
+        .then(data => {
+            const gridContainer = document.querySelector('.grid-container');
+            gridContainer.innerHTML = '';
+
+            data.forEach(item => {
+            const gridItem = document.createElement('div');
+            gridItem.classList.add('grid-item');
+
+            const img = document.createElement('img');
+            img.src = item.imgSrc;
+
+            const p = document.createElement('p');
+            p.textContent = item.title;
+
+            gridItem.addEventListener('click', () => {
+                // Extract the part after 'projects/' and before '/index.html'
+                const link = item.link;
+                const projectId = link.replace('projects/', '').replace('/index.html', '');
+
+                // Redirect to the new URL
+                window.location.href = `/play.html?id=${projectId}`;
+            });
+
+            gridItem.appendChild(img);
+            gridItem.appendChild(p);
+            gridContainer.appendChild(gridItem);
+            });
+        })
+        .catch(error => {
+            console.error('Error loading JSON:', error);
+        });
+    </script>
+</body>
+</html>
