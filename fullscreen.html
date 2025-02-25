@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play | Genesis</title>
+    <link href="/css/global.css" rel="stylesheet">
+    <script src="/js/global.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100% - 40px);
+        }
+        .bar {
+            height: 40px;
+            background-color: black;
+            width: 100%;
+            margin-top: -4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+        .bar h1 {
+            font-size: 24px;
+            margin: 0;
+            white-space: nowrap;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+        .icon {
+            font-size: 30px;
+            height: auto;
+            color: white;
+            margin-top: 80%;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="project-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    <div class="bar" id="project-bar">
+        <h1 id="game-title"></h1>
+    </div>
+    <div class="bottom"></div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        if (projectId) {
+            const iframeSrc = `/projects/${projectId}/index.html`;
+            document.getElementById('project-iframe').src = iframeSrc;
+
+            fetch('/config/games.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to load game data');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const game = data.find(game => game.link.endsWith(`projects/${projectId}/index.html`));
+        if (game) {
+            document.getElementById('game-title').textContent = game.title;
+        } else {
+            console.error('Game not found in JSON.');
+        }
+    })
+    .catch(error => console.error('Error loading game data:', error));
+        } else {
+            console.error('No project ID found in the URL.');
+        }
+        
+    </script>
+</body>
+</html>

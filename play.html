@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play | Genesis</title>
-    <link href="./css/global.css" rel="stylesheet">
+    <link href="/css/global.css" rel="stylesheet">
     <script src="/js/global.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         html, body {
             height: 100%;
             margin: 0;
-            overflow: hidden;
         }
         iframe {
             height: calc(100vh - 110px);
@@ -18,11 +18,63 @@
             position: absolute;
             top: 90px;
             left: 50%;
-            border-radius: 15px;
+            border-radius: 15px 15px 0 0;
             transform: translateX(-50%);
             max-width: calc(100% - 20px);
             opacity: 0;
             animation: fadeIn 0.5s ease-in forwards;
+            background-color: rgba(50, 50, 50, 0.2);
+            border: 2px solid var(--normal-border-color);
+            border-bottom: none;
+        }
+        .bar {
+            height: 50px;
+            margin-top: 76px;
+            background-color: rgba(50, 50, 50, 0.2);
+            position: absolute;
+            top: calc(100vh - 95px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 25px);
+            border-radius: 0 0 15px 15px;
+            border: 2px solid var(--normal-border-color);
+            border-top: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+        .bar h1 {
+            font-size: 24px;
+            text-align: left;
+            margin: 0;
+        }
+        .button {
+            margin-left: auto;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .button:hover {
+            transform: rotate(10deg);
+        }
+        .icon {
+            width: 25px;
+            height: auto;
+            margin-top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+        .bottom {
+            width: 1px;
+            height: 30px;
+            background-color: transparent;
+            margin-top: calc(100vh - 10px);
+            margin-left: 50%;
+            transform: translateX(-50%);
         }
         @keyframes fadeIn {
             from {
@@ -33,18 +85,81 @@
             }
         }
     </style>
-    
 </head>
 <body>
     <div class="fade-down" id="nav-placeholder"></div>
     <iframe id="project-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    <div class="bar" id="project-bar">
+        <h1 id="game-title">Game Title</h1>
+        <div class="button" id="fullscreen-btn"><i class="fa-solid fa-expand icon"></i></div> 
+    </div>
+    <div class="bottom"></div>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('id');
 
         if (projectId) {
             const iframeSrc = `/projects/${projectId}/index.html`;
-            document.getElementById('project-iframe').src = iframeSrc;
+            const iframe = document.getElementById('project-iframe');
+            iframe.src = iframeSrc;
+            iframe.onload = () => {
+                const iframeWidth = iframe.offsetWidth;
+                const bar = document.getElementById('project-bar');
+                bar.style.width = `calc(${iframeWidth}px - 24.5px)`;
+            };
+
+            fetch('/config/games.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load game data');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const game = data.find(game => game.link.endsWith(`projects/${projectId}/index.html`));
+                    if (game) {
+                        document.getElementById('game-title').textContent = game.title;
+                    } else {
+                        console.error('Game not found in JSON.');
+                    }
+                })
+                .catch(error => console.error('Error loading game data:', error));
+
+            const fullscreenButton = document.getElementById('fullscreen-btn');
+            fullscreenButton.addEventListener('click', () => {
+                const fullscreenIframe = document.createElement('iframe');
+                fullscreenIframe.src = `/fullscreen.html?id=${projectId}`;
+                fullscreenIframe.style.position = 'fixed';
+                fullscreenIframe.style.top = '0';
+                fullscreenIframe.style.left = '0';
+                fullscreenIframe.style.width = '100vw';
+                fullscreenIframe.style.height = '100vh';
+                fullscreenIframe.style.border = 'none';
+                fullscreenIframe.style.zIndex = '9999';
+                document.body.appendChild(fullscreenIframe);
+
+                if (fullscreenIframe.requestFullscreen) {
+                    fullscreenIframe.requestFullscreen();
+                } else if (fullscreenIframe.mozRequestFullScreen) {
+                    fullscreenIframe.mozRequestFullScreen();
+                } else if (fullscreenIframe.webkitRequestFullscreen) {
+                    fullscreenIframe.webkitRequestFullscreen();
+                } else if (fullscreenIframe.msRequestFullscreen) {
+                    fullscreenIframe.msRequestFullscreen();
+                }
+
+                const removeIframeOnExit = () => {
+                    if (!document.fullscreenElement) {
+                        document.body.removeChild(fullscreenIframe);
+                        document.removeEventListener('fullscreenchange', removeIframeOnExit);
+                    }
+                };
+
+                document.addEventListener('fullscreenchange', removeIframeOnExit);
+                document.addEventListener('webkitfullscreenchange', removeIframeOnExit);
+                document.addEventListener('mozfullscreenchange', removeIframeOnExit);
+                document.addEventListener('msfullscreenchange', removeIframeOnExit);
+            });
         } else {
             console.error('No project ID found in the URL.');
         }
