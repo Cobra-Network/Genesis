@@ -1,14 +1,19 @@
-/* Define the default theme (Cobra Classic) in :root */
 :root {
     --text-color: white;
     --background: linear-gradient(to right, #03031e, #08082e, #03031e);
     --nav-span-color: #0165FC;
     --normal-border-color: white;
+    --color-1: black;
   }
-  
-  /* Midnight Eclipse Theme Override */
-  .midnight-eclipse {
+.midnight-eclipse {
     --background: linear-gradient(to right, #44475a, #282a36);
     --nav-span-color: #bd93f9;
     --normal-border-color: #44475a;
-  }
+    --color-1: white;
+}
+.golden-dusk {
+  --background: linear-gradient(to left, #232526, #414345);
+  --nav-span-color: #d4af37;
+  --normal-border-color: #d4af37;
+  --color-1: #f5f5dc;
+}

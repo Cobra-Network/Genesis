@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis</title>
+    <link href="./css/global.css" rel="stylesheet">
+    <link href="/css/themes.css" rel="stylesheet">
+    <script src="/js/global.js" type="module"></script>
+    <style>
+        .container {
+            width: 550px;
+            background-color: rgba(50, 50, 50, 0.2);
+            margin-top: 30px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid var(--normal-border-color);
+            border-radius: 25px;
+            padding: 20px 15px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.3s ease-in forwards;
+        }
+        .container h2 {
+            margin-top: 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        select {
+            padding: 10px 10px;
+            background-color: var(--normal-border-color);
+            border: 2px solid var(--normal-border-color);
+            border-radius: 10px;
+            color: var(--color-1);
+        }
+        button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 2px solid var(--normal-border-color);
+            background-color: var(--normal-border-color);
+            color: var(--color-1);
+        }
+        .fa-solid {
+            font-size: 12px;
+            color: var(--color-1);
+            transform: translateY(-2px);
+            text-align: normal;
+            margin-top: unset;
+            transform: none;
+        }
+        .item {
+            width: 400px;
+            padding: 15px 10px 10px 10px;
+            background-color: transparent;
+            border: 2px solid var(--normal-border-color);
+            border-radius: 10px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+        .item h3 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .item p {
+            font-size: 12px;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: var(--color-1);
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        input:checked + .slider {
+            background-color: var(--normal-border-color);
+        }
+        input:focus + .slider {
+            box-shadow: 0 0 1px var(--normal-border-color);
+        }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(20px);
+            -ms-transform: translateX(20px);
+            transform: translateX(20px);
+        }
+        .slider:before {
+            border-radius: 50%;
+        }
+        .end {
+            height: 30px;
+            width: 1px;
+            background-color: transparent;
+        }
+        li {
+            text-align: left;
+        }
+        a {
+            color: white;
+        }
+        span {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        ul {
+            margin-top: 10px;
+        }
+        li {
+            margin-top: 5px;
+        }
+        .section {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-down" id="nav-placeholder"></div>
+    <h1>Update Log</h1>
+    <div class="container">
+        <h2>2/25/2024</h2>
+        <ul>
+            <li class="section"><span>General</span>
+                <ul>
+                    <li>Created <a href="/update-log.html">Update Log</a></li>
+                    <li>Changed adblocker popup to be closeable instead of it's previous state of being uncloseable due to a complaint of a user's school-enforced adblock.</li>
+                </ul>
+            </li>
+            <li class="section"><span>Settings Page</span>
+                <ul>
+                    <li>Added About:Blank Cloaking
+                        <ul>
+                            <li>Cloaked (automatically Google), or uncloaked</li>
+                        </ul>
+                    </li>
+                    <li>Added preset cloaking options.</li>
+                </ul>
+            </li>
+        </ul>        
+    </div>
+    <div class="end"></div>
+</body>
+</html>

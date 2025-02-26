@@ -134,10 +134,12 @@ const detectedAdblock = async () => {
     return !isNotUsingAdblocker;
 };
 
-// Function to detect adblock usage
 detectedAdblock().then(result => {
-    if (result) {
-        // Create overlay
+    const lastClosedTimestamp = localStorage.getItem('adblockLastClosed');
+    const currentTimestamp = new Date().getTime();
+    const shouldShowAdblockPopup = !lastClosedTimestamp || (currentTimestamp - lastClosedTimestamp) > 48 * 60 * 60 * 1000;
+
+    if (result && shouldShowAdblockPopup) {
         const overlay = document.createElement('div');
         overlay.style.position = 'fixed';
         overlay.style.top = '0';
@@ -154,14 +156,12 @@ detectedAdblock().then(result => {
         overlay.style.color = '#fff';
         overlay.style.textAlign = 'center';
 
-        // Create message
         const message = document.createElement('div');
         message.style.marginBottom = '20px';
-        message.innerHTML = '<h2>We rely on ads to keep our site running</h2><p>Please turn off your adblocker and check again.</p>';
+        message.innerHTML = '<h2>We rely on ads to keep our site running</h2><p>Ads help us fund domains, so that we can get you more links. You can continue without turning it off.</p>';
 
-        // Create button
         const button = document.createElement('button');
-        button.textContent = 'Retry';
+        button.textContent = 'Close';
         button.style.padding = '10px 20px';
         button.style.fontSize = '16px';
         button.style.cursor = 'pointer';
@@ -170,14 +170,13 @@ detectedAdblock().then(result => {
         button.style.backgroundColor = '#007BFF';
         button.style.color = '#fff';
         button.addEventListener('click', () => {
-            location.reload(); // Reload the page
+            localStorage.setItem('adblockLastClosed', currentTimestamp.toString());
+            overlay.remove();
         });
 
-        // Append message and button to overlay
         overlay.appendChild(message);
         overlay.appendChild(button);
 
-        // Append overlay to body
         document.body.appendChild(overlay);
     }
 });

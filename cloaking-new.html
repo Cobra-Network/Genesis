@@ -147,6 +147,14 @@
         <h2>Tab Cloaking</h2>
         <p style="color: green;"><i style="all: unset; font-style: italic;">Recommended</i></p>
         <p>Changes the way the tab is displayed in the browser.</p>
+        <div class="item">
+            <h3>Automatic Cloaking</h3>
+            <p>Each official site will be cloaked automatically based on their domain.</p>
+            <label class="switch">
+                <input type="checkbox" id="toggle-cloaking">
+                <span class="slider round"></span>
+            </label>            
+        </div>
         <div class="item" style="margin-top: 15px;">
             <h3>Preset Cloaking</h3>
             <p>Select the premade cloak you want.</p>
@@ -154,8 +162,7 @@
                 <option value="default">Genesis (Default)</option>
                 <option value="google">Google</option>
                 <option value="schoology">Schoology</option>
-                <option value="infinite-campus-1">Infinite Campus (1)</option>
-                <option value="infinite-campus-2">Infinite Campus (2)</option>
+                <option value="infinite-campus">Infinite Campus</option>
                 <option value="youtube">YouTube</option>
                 <option value="google-slides">Google Slides</option>
                 <option value="google-docs">Google Docs</option>
@@ -246,53 +253,6 @@
             setTimeout(() => {
                 window.close();
             }, 100);
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const cloakSelector = document.getElementById("cloak-selector");
-
-            // Preset data for titles and favicons
-            const cloaks = {
-                "default": { title: "Genesis", favicon: "default.ico" },
-                "google": { title: "Google", favicon: "https://www.google.com/favicon.ico" },
-                "schoology": { title: "Schoology", favicon: "https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico" },
-                "infinite-campus-1": { title: "Infinite Campus", favicon: "https://www.infinitecampus.com/favicon.ico" },
-                "infinite-campus-2": { title: "Campus Student", favicon: "https://wicloud2.infinitecampus.org/campus/favicon-48x48.png" },
-                "youtube": { title: "YouTube", favicon: "https://www.youtube.com/favicon.ico" },
-                "google-slides": { title: "Google Slides", favicon: "https://ssl.gstatic.com/docs/presentations/images/favicon5.ico" },
-                "google-docs": { title: "Google Docs", favicon: "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" },
-                "google-drive": { title: "Google Drive", favicon: "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png" },
-                "gmail": { title: "Gmail", favicon: "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" },
-                "google-calendar": { title: "Google Calendar", favicon: "https://calendar.google.com/googlecalendar/images/favicons_2020q4/calendar_25.ico" },
-                "google-photos": { title: "Google Photos", favicon: "https://www.gstatic.com/images/branding/product/2x/photos_64dp.png" },
-                "google-keep": { title: "Google Keep", favicon: "https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png" }
-            };
-
-            // Load saved selection
-            const savedCloak = localStorage.getItem("selectedCloak");
-            if (savedCloak && cloaks[savedCloak]) {
-                cloakSelector.value = savedCloak;
-                applyCloak(savedCloak);
-            }
-
-            // Event listener for selection change
-            cloakSelector.addEventListener("change", function () {
-                const selectedCloak = cloakSelector.value;
-                localStorage.setItem("selectedCloak", selectedCloak);
-                applyCloak(selectedCloak);
-            });
-
-            function applyCloak(cloak) {
-                document.title = cloaks[cloak].title;
-
-                // Change favicon
-                let link = document.querySelector("link[rel~='icon']");
-                if (!link) {
-                    link = document.createElement("link");
-                    link.rel = "icon";
-                    document.head.appendChild(link);
-                }
-                link.href = cloaks[cloak].favicon;
-            }
         });
     </script>
 </body>

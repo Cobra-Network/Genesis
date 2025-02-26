@@ -1,0 +1,70 @@
+{
+    "items": [
+      {
+        "title": "Genesis (Default)",
+        "icon": "https://genesis.domain/favicon.ico"
+      },
+      {
+        "title": "Google",
+        "icon": "https://google.com/favicon.ico"
+      },
+      {
+        "title": "Schoology",
+        "icon": "https://schoology.com/favicon.ico"
+      },
+      {
+        "title": "Infinite Campus",
+        "icon": "https://infinitecampus.com/favicon.ico"
+      },
+      {
+        "title": "YouTube",
+        "icon": "https://youtube.com/favicon.ico"
+      },
+      {
+        "title": "Google Slides",
+        "icon": "https://google.com/slides/favicon.ico"
+      },
+      {
+        "title": "Google Docs",
+        "icon": "https://google.com/docs/favicon.ico"
+      },
+      {
+        "title": "Google Drive",
+        "icon": "https://google.com/drive/favicon.ico"
+      },
+      {
+        "title": "Gmail",
+        "icon": "https://gmail.com/favicon.ico"
+      },
+      {
+        "title": "Google Calendar",
+        "icon": "https://google.com/calendar/favicon.ico"
+      },
+      {
+        "title": "Google Photos",
+        "icon": "https://photos.google.com/favicon.ico"
+      },
+      {
+        "title": "Google Keep",
+        "icon": "https://keep.google.com/favicon.ico"
+      }
+    ],
+    "official_sites": [
+      {
+        "title": "Genesis",
+        "url": "https://genesis.cobranet.site",
+        "icon": "/favicon.ico"
+      },
+      {
+        "title": "Cheapest Autos Near You | Cheapest.Autos",
+        "url": "https://cheapest.autos",
+        "icon": "https://usautoinsurancenow.com/auto-favicon.png"
+      },
+      {
+        "title": "Cheapest Autos Near You | Cheapest.Autos",
+        "url": "http://127.0.0.1:3000/",
+        "icon": "https://usautoinsurancenow.com/auto-favicon.png"
+      }
+    ]
+  }
+  
