@@ -128,13 +128,16 @@
         <script type="text/javascript" src="//www.highperformanceformat.com/d529b09deca988452fd9313e589d65c0/invoke.js"></script>
     </div>
     <script>
-        fetch('/config/games.json')
-        .then(response => response.json())
-        .then(data => {
-            const gridContainer = document.querySelector('.grid-container');
-            gridContainer.innerHTML = '';
+            fetch('/config/games.json')
+    .then(response => response.json())
+    .then(data => {
+        // Sort games alphabetically by title
+        data.sort((a, b) => a.title.localeCompare(b.title));
 
-            data.forEach(item => {
+        const gridContainer = document.querySelector('.grid-container');
+        gridContainer.innerHTML = '';
+
+        data.forEach(item => {
             const gridItem = document.createElement('div');
             gridItem.classList.add('grid-item');
 
@@ -156,11 +159,11 @@
             gridItem.appendChild(img);
             gridItem.appendChild(p);
             gridContainer.appendChild(gridItem);
-            });
-        })
-        .catch(error => {
-            console.error('Error loading JSON:', error);
         });
+    })
+    .catch(error => {
+        console.error('Error loading JSON:', error);
+    });
     </script>
 </body>
 </html>

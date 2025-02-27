@@ -723,5 +723,360 @@
     "link": "projects/you-are-bezos/index.html",
     "imgSrc": "projects/you-are-bezos/img/banner.png",
     "title": "You Are Jeff Bezos"
+  },
+  {
+    "link": "projects/10-bullets/index.html",
+    "imgSrc": "https://www.shareicon.net/data/2015/08/11/83725_file_256x256.png",
+    "title": "10 Bullets"
+  },
+  {
+    "link": "projects/10-minutes-til-dawn/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon/ab38039d7c1a6862cc692cd15e20d757.ico",
+    "title": "10 Minutes Til Dawn"
+  },
+  {
+    "link": "projects/1-on-1-soccer/index.html",
+    "imgSrc": "https://static.keygames.com/0/60740/35614/1024x1024/1-tegen-1-voetbal.webp",
+    "title": "1 On 1 Soccer"
+  },
+  {
+    "link": "projects/1v1-lol/index.html",
+    "imgSrc": "https://lh3.googleusercontent.com/emrVrBK07f1GxpRT3Y0zblVya4omNGfaSAaNceBKQhAglF3wLOC3gfc_dLxgbZf6R-jChtOgBDJ6DI9uEvjhXjFr=s128-rj-sc0x00ffffff",
+    "title": "1v1 LOL"
+  },
+  {
+    "link": "projects/2048-cupcakes/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.wolfgangknecht.cupcake-36775b46-4a9d-479c-9f9a-2af59cd02437_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "2048 Cupcakes"
+  },
+  {
+    "link": "projects/2d-shooting/index.html",
+    "imgSrc": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/231985011/original/eb6be4a5c01b5fe30e5d3822f0191b8e225a6761/design-2d-game-icon-app-icon-and-props.png",
+    "title": "2D Shooting"
+  },
+  {
+    "link": "projects/40x-escape/index.html",
+    "imgSrc": "https://steamuserimages-a.akamaihd.net/ugc/5107676531852224906/0FDAD2B9386186B13EF46B96A1A28A5D13EB67F2/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+    "title": "40X Escape"
+  },
+  {
+    "link": "projects/60-second-burger-run/index.html",
+    "imgSrc": "https://www.speedrun.com/static/game/o6g4mo62/cover.png?v=efc0503",
+    "title": "60 Second Burger Run"
+  },
+  {
+    "link": "projects/8-ball-pool/index.html",
+    "imgSrc": "https://play-lh.googleusercontent.com/RV7FGo7xF65JzXC7OkRak-Ke6rSuXmy63IG0vvIBKXYOxNcImJSZA3jOcXu4MYRI6Rh6=s256-rw",
+    "title": "8 Ball Pool"
+  },
+  {
+    "link": "projects/99-balls/index.html",
+    "imgSrc": "https://www.jopi.com/cdn-cgi/image/quality=70,width=256,height=256,f=auto/img/t/99-balls.png",
+    "title": "99 Balls"
+  },
+  {
+    "link": "projects/abandoned/index.html",
+    "imgSrc": "https://steamuserimages-a.akamaihd.net/ugc/1849300637104904297/0147A87535F79689F68555128F512C484D4CE685/?imw=128&imh=128&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+    "title": "Abandoned"
+  },
+  {
+    "link": "projects/abandoned-3/index.html",
+    "imgSrc": "https://steamuserimages-a.akamaihd.net/ugc/785251538044510266/E53ECB79C652055348890DDEB5FA03A62268D298/?imw=128&imh=128&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+    "title": "Abandoned 3"
+  },
+  {
+    "link": "projects/ace-gangster-taxi/index.html",
+    "imgSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSelzAQU_d1MhULvgMGsqLuSjMWQYUlm130A&s",
+    "title": "Ace Gangster Taxi"
+  },
+  {
+    "link": "projects/100skibidistillwaterthosewhoknow/index.html",
+    "imgSrc": "https://www.onlinegames.io/media/posts/814/You-vs-100-skibidi-toilets.jpg",
+    "title": "1 VS 100 Skibidi Toilets"
+  },
+  {
+    "link": "projects/achievementunlocked/index.html",
+    "imgSrc": "https://www.shareicon.net/data/2015/08/11/83725_file_256x256.png",
+    "title": "Achievement Unlocked"
+  },
+  {
+    "link": "projects/achievmentunlocked2/index.html",
+    "imgSrc": "https://www.shareicon.net/data/2015/08/11/83725_file_256x256.png",
+    "title": "Achievement Unlocked 2"
+  },
+  {
+    "link": "projects/achievmentunlocked3/index.html",
+    "imgSrc": "https://www.speedrun.com/static/game/m1zm3x60/cover.png?v=2e5bc66",
+    "title": "Achievement Unlocked 3"
+  },
+  {
+    "link": "projects/achillies1fr/index.html",
+    "imgSrc": "https://www.shareicon.net/data/2015/08/11/83725_file_256x256.png",
+    "title": "Achillies"
+  },
+  {
+    "link": "projects/achillies2/index.html",
+    "imgSrc": "https://www.shareicon.net/data/2015/08/11/83725_file_256x256.png",
+    "title": "Achillies 2"
+  },
+  {
+    "link": "projects/advancewars/index.html",
+    "imgSrc": "https://www.speedrun.com/static/game/o6gxjnd2/cover.png?v=6d33bbd",
+    "title": "Advance Wars"
+  },
+  {
+    "link": "projects/advancewars2/index.html",
+    "imgSrc": "https://www.speedrun.com/static/game/3694ll1l/cover.png?v=f1f33d6",
+    "title": "Advance Wars 2"
+  },
+  {
+    "link": "projects/agariolite/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon/e4acb4c86de9d2d9a41364f93951028d.png",
+    "title": "Agar.io"
+  },
+  {
+    "link": "projects/ageofwar/index.html",
+    "imgSrc": "https://play-lh.googleusercontent.com/cez7h97liCyy1oqCsBRy0tzIbdRXDFjGs6XuAyPCbl2PHglm_wl8KydulnJWjMlRgGPc",
+    "title": "Age of War"
+  },
+  {
+    "link": "projects/ageofwar2/index.html",
+    "imgSrc": "https://play-lh.googleusercontent.com/cgfjh-wXhG7rh0mCejpGwYmBw4PoDnBRQ2P6ARrHpGG0dTeP109HovgHyC_6Cqu4WA=s256-rw",
+    "title": "Age of War 2"
+  },
+  {
+    "link": "projects/ahoysurvival/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.sevenpirates.dave-894c6f18-db9b-4866-b694-a1510836bada_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "Ahoy Survival"
+  },
+  {
+    "link": "projects/akoopasrevenge/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon_thumb/dfb8e1450abdf50cc0f260e0e7a62296.png",
+    "title": "A Koopa's Revenge"
+  },
+  {
+    "link": "projects/akoopasrevenge2/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon_thumb/dfb8e1450abdf50cc0f260e0e7a62296.png",
+    "title": "A Koopa's Revenge 2"
+  },
+  {
+    "link": "projects/alienhominid/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon/2d4d7165e69c45e4464248a236737ecb.ico",
+    "title": "Alien Hominid"
+  },
+  {
+    "link": "projects/alientransporter/index.html",
+    "imgSrc": "https://www.shareicon.net/data/2015/08/11/83725_file_256x256.png",
+    "title": "Alien Transporter"
+  },
+  {
+    "link": "projects/alienvspredator/index.html",
+    "imgSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe1J8zVjX9GQFScxkVDd57BOGCx6eHEY-q8A&s",
+    "title": "Alien VS Predator"
+  },
+  {
+    "link": "projects/allocation/index.html",
+    "imgSrc": "https://www.shareicon.net/data/2015/08/11/83725_file_256x256.png",
+    "title": "Allocation"
+  },
+  {
+    "link": "projects/amigopancho/index.html",
+    "imgSrc": "https://play-lh.googleusercontent.com/nKLuoSKx8-kIU8pb609VWlAUX1b7dP-zSXuSSFPSyPqZVv5lDz_cztJmFjJ_Nngx4Q=s256-rw",
+    "title": "Amigo Pancho"
+  },
+  {
+    "link": "projects/amigopancho2/index.html",
+    "imgSrc": "https://play-lh.googleusercontent.com/OwpuUcu7cpU1DSfOHCiGigiiEqLbOY9vwTXhBeJDj6pUkrF_ojORnHc8JfDfwjDgQv3n=s256-rw",
+    "title": "Amigo Pancho 2"
+  },
+  {
+    "link": "projects/amigopancho3/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.qaibo.AmigoPancho1G-9f813f06-bba3-4200-9dac-8a430216f69f_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "Amigo Pancho 3"
+  },
+  {
+    "link": "projects/amigopancho4/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.qaibo.AmigoPancho1G-9f813f06-bba3-4200-9dac-8a430216f69f_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "Amigo Pancho 4"
+  },
+  {
+    "link": "projects/amigopancho5/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.qaibo.AmigoPancho1G-9f813f06-bba3-4200-9dac-8a430216f69f_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "Amigo Pancho 5"
+  },
+  {
+    "link": "projects/amigopancho6/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.qaibo.AmigoPancho1G-9f813f06-bba3-4200-9dac-8a430216f69f_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "Amigo Pancho 6"
+  },
+  {
+    "link": "projects/amigopancho7/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.qaibo.AmigoPancho1G-9f813f06-bba3-4200-9dac-8a430216f69f_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "Amigo Pancho 7"
+  },
+  {
+    "link": "projects/angrybirds/index.html",
+    "imgSrc": "https://play-lh.googleusercontent.com/Y9BUoMIWfhZDUFZ_MxQmnsgSyb3O8s8Sds65E_j46-vdDSJi_0Xqmoa-fHaQa7fGlw=s256-rw",
+    "title": "Angry Birds"
+  },
+  {
+    "link": "projects/animalcrossingwildworld/index.html",
+    "imgSrc": "https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-653438-52.jpg",
+    "title": "Animal Crossing: Wild World"
+  },
+  {
+    "link": "projects/appleshooter/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.apple.shooter.as-57916af3-fdba-4c2b-98fc-63986a6ba6ef_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "Apple Shooter"
+  },
+  {
+    "link": "projects/appleworm/index.html",
+    "imgSrc": "https://cdn-1.webcatalog.io/catalog/poki-apple-worm/poki-apple-worm-icon-filled-256.png?v=1730516768273",
+    "title": "Apple Worm"
+  },
+  {
+    "link": "projects/ascent/index.html",
+    "imgSrc": "https://www.lexaloffle.com/bbs/thumbs/pico8_ascent-0.png",
+    "title": "Ascent"
+  },
+  {
+    "link": "projects/asmallworldcup/index.html",
+    "imgSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-BL_3vqasUMxBY4n1RG0UvEBl_r4xQK29pg&s",
+    "title": "A Small World Cup"
+  },
+  {
+    "link": "projects/asteroids/index.html",
+    "imgSrc": "https://is3-ssl.mzstatic.com/image/thumb/Purple/v4/e4/bb/a3/e4bba37a-18bb-692e-e7f7-2a58131379ad/source/256x256bb.jpg",
+    "title": "Asteroids"
+  },
+  {
+    "link": "projects/avalanche/index.html",
+    "imgSrc": "https://www.shareicon.net/data/2015/08/11/83725_file_256x256.png",
+    "title": "Avalanche"
+  },
+  {
+    "link": "projects/awesomeplanes/index.html",
+    "imgSrc": "https://archive.org/download/awesomeplanes_flash/screenshot_01.png",
+    "title": "Awesome Planes"
+  },
+  {
+    "link": "projects/awesometanks/index.html",
+    "imgSrc": "https://play-lh.googleusercontent.com/Q3KXCI1OOKDjr_K0CeWZrUYk-89Dgm1JcCHuPnm79mqJDJQujVH3IwxTaH9076Xc7Gw=s256-rw",
+    "title": "Awesome Tanks"
+  },
+  {
+    "link": "projects/awesometanks2/index.html",
+    "imgSrc": "https://lh3.googleusercontent.com/mWggzmgYL-acTOc0xZcr5jCojmhIf2RHCYk3viQczOQha6QXNuczV5p1EK526-271ju-VEtWHOiijKDUId0Q5h75=s128-rj-sc0x00ffffff",
+    "title": "Awesome Tanks 2"
+  },
+  {
+    "link": "projects/B3313/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon_thumb/2f68e9c645f7b80b9f75a1a09565f86e.png",
+    "title": "B3313"
+  },
+  {
+    "link": "projects/babychiccoadventure/index.html",
+    "imgSrc": "https://www4.minijuegosgratis.com/v3/games/thumbnails/240562_7_sq.jpg",
+    "title": "Baby Chicco Adventures"
+  },
+  {
+    "link": "projects/babykaizo/index.html",
+    "imgSrc": "https://b.thumbs.redditmedia.com/cLj4P0rI73UVob7AegObOBv4kPm3pISz5Ag4j_UuMEE.png",
+    "title": "Baby Kaizo"
+  },
+  {
+    "link": "projects/backyardbaseball/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon_thumb/473b9cd86dd301550517800b36c7a8e5.png",
+    "title": "Backyard Baseball"
+  },
+  {
+    "link": "projects/backyardbaseball09/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon_thumb/473b9cd86dd301550517800b36c7a8e5.png",
+    "title": "Backyard Baseball 09"
+  },
+  {
+    "link": "projects/backyardbaseball10/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon_thumb/473b9cd86dd301550517800b36c7a8e5.png",
+    "title": "Backyard Baseball 10"
+  },
+  {
+    "link": "projects/badicecream/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon/3ef815416f775098fe977004015c6193.ico",
+    "title": "Bad Ice Cream"
+  },
+  {
+    "link": "projects/badtimesim/index.html",
+    "imgSrc": "https://s.cafebazaar.ir/images/icons/com.faridev.sklrwrk-5d6e49f3-de80-4d9c-bde1-11decbbc78dd_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize",
+    "title": "Bad Time Simulator"
+  },
+  {
+    "link": "projects/baldisbasics/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon/d23a0a2880738ad75a04b1c9dc7d9b73/32/256x256.png",
+    "title": "Baldi's Basics"
+  },
+  {
+    "link": "projects/ballsandbricksgood/index.html",
+    "imgSrc": "https://play-lh.googleusercontent.com/SQz0JvXbE79xaZb56CiaOn8cab-k9vTTQ00hHWEuE2jWuJ5PR-s0grAi1RIwAKJ5FNsv=s256-rw",
+    "title": "Balls and Bricks"
+  },
+  {
+    "link": "projects/bananasimulator/index.html",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/bubbls/ruffle@ad6ffa3289c102eb4a4aced92a17e4ea291603d5/bananasim.png",
+    "title": "Banana Simulator"
+  },
+  {
+    "link": "projects/banjokazooie/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon/81f89eda54f8e14777eddd0812aea85d.png",
+    "title": "Banjo-Kazooie"
+  },
+  {
+    "link": "projects/banjotooie/index.html",
+    "imgSrc": "https://cdn2.steamgriddb.com/icon/bc8a3b91b762ea06e9ca6d8e8e9caca0.ico",
+    "title": "Banjo-Tooie"
+  },
+  {
+    "link": "projects/bankbreakout2/index.html",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/bubbls/UGS-file-encryption@7afc4ec612f27eec611c976212712f79b15e592a/images.jpg",
+    "title": "Bank Breakout 2"
+  },
+  {
+    "link": "projects/bankrobbery2/index.html",
+    "imgSrc": "https://www4.minijuegosgratis.com/v3/games/thumbnails/243793_7_sq.jpg",
+    "title": "Bank Robbery 2"
+  },
+  {
+    "link": "projects/barryhasasecret/index.html",
+    "imgSrc": "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/22/c3/97/22c39751-d6f0-9402-a870-5b1bbd0a8dc3/source/256x256bb.jpg",
+    "title": "Barry Has a Secret"
+  },
+  {
+    "link": "projects/bas/index.html",
+    "imgSrc": "https://www.lexaloffle.com/bbs/thumbs/pico8_bas-9.png",
+    "title": "BAS"
+  },
+  {
+    "link": "projects/basketballlegends/index.html",
+    "imgSrc": "https://cdn-1.webcatalog.io/catalog/poki-basketball-legends-2020/poki-basketball-legends-2020-icon-filled-256.png?v=1714780119393",
+    "title": "Basketball Legends 2020"
+  },
+  {
+    "link": "projects/basketballlegendsgoodywoody/index.html",
+    "imgSrc": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/11/73/81/1173819a-8030-db43-32e3-cfcf93a44d11/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/256x256bb.jpg",
+    "title": "Basketball Legends"
+  },
+  {
+    "link": "projects/basketbros/index.html",
+    "imgSrc": "https://ovo-game.github.io/imgs/basket-bros.png",
+    "title": "Basket Bros"
+  },
+  {
+    "link": "projects/basketrandom/index.html",
+    "imgSrc": "https://www.jopi.com/cdn-cgi/image/quality=70,width=256,height=256,f=auto/img/t/basket-random.png",
+    "title": "Basket Random"
+  },
+  {
+    "link": "projects/battlesim/index.html",
+    "imgSrc": "https://a.silvergames.com/j/b/battle-simulator.jpg",
+    "title": "Battle Simulator"
   }
 ]

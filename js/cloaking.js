@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cloaks = {
-        "default": { title: "Genesis", favicon: "default.ico" },
+        "default": { title: "Genesis", favicon: "favicon.ico" },
         "google": { title: "Google", favicon: "https://www.google.com/favicon.ico" },
-        "schoology": { title: "Schoology", favicon: "https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico" },
+        "schoology": { title: "Home | Schoology", favicon: "https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico" },
         "infinite-campus-1": { title: "Infinite Campus", favicon: "https://www.infinitecampus.com/favicon.ico" },
         "infinite-campus-2": { title: "Campus Student", favicon: "https://wicloud2.infinitecampus.org/campus/favicon-48x48.png" },
         "youtube": { title: "YouTube", favicon: "https://www.youtube.com/favicon.ico" },
